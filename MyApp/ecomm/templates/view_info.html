@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load get_id %}
+{% block content %}
+
+<div class="container">
+    <table class="table table-bordered">
+        <tr>
+            <td>ID</td>
+            <td>Name</td>
+            <td>Price</td>
+            <td>More Info</td>
+        </tr>
+
+        {% for row in content %}
+        <tr>
+            {% for item in row %}
+            <td>
+                {{ item }}
+            </td>
+            {% endfor %}
+            <td><a href="/more_info/?id={{ row | get_id }}"> Click Here </a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+
+{% endblock %}
