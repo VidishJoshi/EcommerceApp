@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+    <center>
+        {{ name }} will cost you {{ price }} <br>
+        We have quantity {{ quantity }} available.
+    
+
+        <form method = "POST">
+            {% csrf_token %}
+            Enter your quantity : <input type = "number" id = "user_quantity" name = "user_quantity">
+            <button type = "submit">Submit</button>
+        </form>
+
+    </center>
+
+</div>
+
+{% endblock %}
